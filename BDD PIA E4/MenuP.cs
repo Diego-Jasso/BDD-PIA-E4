@@ -72,27 +72,64 @@ namespace BDD_PIA_E4
         #region Desplegar sub menus
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelCitasSub);
+            if (Acceso == 5 || Acceso == 1 || Acceso == 4 || Acceso == 3)
+            {
+                MostrarSubMenu(panelCitasSub);
+            }
+            else
+            {
+                MessageBox.Show("No tiene acceso a esta opcion");
+            }
         }
 
         private void btnPac_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelPacientesSub);
+            if (Acceso == 5 || Acceso == 3)
+            {
+                MostrarSubMenu(panelPacientesSub);
+            }
+            else
+            {
+                MessageBox.Show("No tiene acceso a esta opcion");
+            }
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelReporteSub);
+            if (Acceso == 5 || Acceso == 3 || Acceso ==1)
+            {
+                MostrarSubMenu(panelReporteSub);
+            }
+            else
+            {
+                MessageBox.Show("No tiene acceso a esta opcion");
+            }
+            
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelEmpleadosSub);
+            if (Acceso == 5 || Acceso == 4)
+            {
+                MostrarSubMenu(panelEmpleadosSub);
+            }
+            else
+            {
+                MessageBox.Show("No tiene acceso a esta opcion");
+            }
+            
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelInventariosSub);
+            if (Acceso == 5 || Acceso == 2)
+            {
+                MostrarSubMenu(panelInventariosSub);
+            }
+            else
+            {
+                MessageBox.Show("No tiene acceso a esta opcion");
+            }
         }
         #endregion
 
@@ -114,24 +151,21 @@ namespace BDD_PIA_E4
         }
         #endregion
 
-        private void btnAgregarC_Click(object sender, EventArgs e)
-        {
-            Mostrarform(new PruebaDiseno());
-        }
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
-            Mostrarform(new InventariosCatalogo());
+                Mostrarform(new InventariosCatalogo());
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Mostrarform(new Proveedores());
+                Mostrarform(new Proveedores());
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Mostrarform(new OrdenCompra());
+                Mostrarform(new OrdenCompra());
+            
         }
 
         private void button10_Click(object sender, EventArgs e)

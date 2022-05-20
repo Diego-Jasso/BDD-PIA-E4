@@ -8,7 +8,6 @@ namespace Consultas
 {
     public partial class CitasRecepcion : Form
     {
-        private string cnxstring = "Data Source=localhost\\sqlexpress;Initial Catalog=Consultorio;Integrated Security=yes";
         private string qrystring = "SELECT * FROM Citas_Activas_Hoy";
         private string srvstring = "SELECT TipoServicio_id,Descripcion FROM TiposServicio";
         private string allsrvstring = "SELECT top(20) * FROM Cita_Datos ORDER BY [Fecha de Registro] DESC";

@@ -80,11 +80,10 @@ namespace CshaepBDD
         {
             Conexion.Conectar();
             string insertar = "update Doctores " +
-                "set Empleado_ID = @Empleado_ID ,Cedula = @Cedula ,Especialidad_id = @Especialidad_id " +
-                "where Empleado_ID = @IDAnt";
+                "set Empleado_Id = @Empleado_ID ,Cedula = @Cedula ,Especialidad_id = @Especialidad_id " +
+                "where Empleado_Id = @Empleado_ID";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Empleado_ID", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@IDAnt", textBox1.Text);
             cmdl.Parameters.AddWithValue("@Cedula", textBox2.Text);
             cmdl.Parameters.AddWithValue("@Especialidad_id", textBox3.Text);
             try

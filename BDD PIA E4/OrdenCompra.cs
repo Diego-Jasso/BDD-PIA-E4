@@ -103,7 +103,5 @@ namespace BDD_PIA_E4
             
         }
 
-        Form Prueba = new PruebaDiseno();
-        
     }
 }

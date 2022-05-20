@@ -205,12 +205,6 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="PruebaDiseno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PruebaDiseno.Designer.cs">
-      <DependentUpon>PruebaDiseno.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AdeudoInsumos.resx">
       <DependentUpon>AdeudoInsumos.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,9 +291,6 @@
     </Compile>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PruebaDiseno.resx">
-      <DependentUpon>PruebaDiseno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
