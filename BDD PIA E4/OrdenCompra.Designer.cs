@@ -40,6 +40,7 @@ namespace BDD_PIA_E4
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewOrd = new System.Windows.Forms.DataGridView();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
+            this.boton_detalle_ord_compra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,11 +142,22 @@ namespace BDD_PIA_E4
             this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFecha.TabIndex = 38;
             // 
+            // boton_detalle_ord_compra
+            // 
+            this.boton_detalle_ord_compra.Location = new System.Drawing.Point(374, 95);
+            this.boton_detalle_ord_compra.Name = "boton_detalle_ord_compra";
+            this.boton_detalle_ord_compra.Size = new System.Drawing.Size(203, 23);
+            this.boton_detalle_ord_compra.TabIndex = 39;
+            this.boton_detalle_ord_compra.Text = "Ver detalle";
+            this.boton_detalle_ord_compra.UseVisualStyleBackColor = true;
+            this.boton_detalle_ord_compra.Click += new System.EventHandler(this.boton_detalle_ord_compra_Click);
+            // 
             // OrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 322);
+            this.Controls.Add(this.boton_detalle_ord_compra);
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.txtProvID);
             this.Controls.Add(this.label5);
@@ -181,5 +193,6 @@ namespace BDD_PIA_E4
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridViewOrd;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private System.Windows.Forms.Button boton_detalle_ord_compra;
     }
 }

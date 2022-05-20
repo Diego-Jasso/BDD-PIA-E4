@@ -104,6 +104,12 @@ namespace BDD_PIA_E4
         }
 
         Form Prueba = new PruebaDiseno();
-        
+
+        private void boton_detalle_ord_compra_Click(object sender, EventArgs e)
+        {
+            var sel_id = (long)dataGridViewOrd.CurrentRow.Cells[0].Value;
+            var Formdetalle = new FaltanteInventarios.DetalleOrdenCompra(sel_id);
+            Formdetalle.Show();
+        }
     }
 }

@@ -174,11 +174,6 @@ namespace BDD_PIA_E4
             Mostrarform(new InsumoProveedor());
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            Mostrarform(new DetalleOrdenCompra());
-        }
-
         private void button16_Click(object sender, EventArgs e)
         {
             Mostrarform(new AdeudoInsumos());
