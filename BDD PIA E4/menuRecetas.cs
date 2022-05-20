@@ -52,7 +52,7 @@ namespace BDD_PIA_E4
         private void button1_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string insertar = "Insert into Receta_Conceptos(Medicamento_id,Cantidad) values(, @Medicamento_id , @Cantidad)";
+            string insertar = "Insert into Receta_Conceptos(Reporte_id,Medicamento_id,Cantidad) values(@Reporte_id, @Medicamento_id , @Cantidad)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Reporte_id", textreporte_id.Text);
             cmdl.Parameters.AddWithValue("@Medicamento_id", textmedicamento_id.Text);

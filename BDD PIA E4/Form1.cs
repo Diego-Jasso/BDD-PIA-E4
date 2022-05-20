@@ -28,31 +28,39 @@ namespace BDD_PIA_E4
             cmd.Parameters.AddWithValue("@Password", txtPass.Text);
             try
             {
-                int Acceso = (int)cmd.ExecuteScalar();
-                SqlCommand cmd2 = new SqlCommand("Select Empleado_id from Acceso_Empleado Where Usuario = @Usuario AND Pass = @Password", Conexion.Conectar());
-                cmd2.Parameters.AddWithValue("@Usuario", txtUsr.Text);
-                cmd2.Parameters.AddWithValue("@Password", txtPass.Text);
-
-                long UsuarioID = (long)cmd2.ExecuteScalar();
-
-                //MessageBox.Show("El valor de la variable existe es: " + Acceso);
-                //MessageBox.Show("El valor de la variabl ID Usuario es: " + UsuarioID);
-
-                if (Acceso <= 5 && Acceso >=0)
+                if (cmd.ExecuteScalar() == null)
                 {
-                    MessageBox.Show("Se ha iniciado sesion correctamente");
-                    MenuP Men = new MenuP(Acceso, UsuarioID);
-                    this.Hide();
-                    Men.Show();
+                    MessageBox.Show("Usuario o contraseña incorrectos");
                 }
                 else
-                    MessageBox.Show("No se pudo iniciar sesion correctamente");
+                {
+                    int Acceso = (int)cmd.ExecuteScalar();
+                    SqlCommand cmd2 = new SqlCommand("Select Empleado_id from Acceso_Empleado Where Usuario = @Usuario AND Pass = @Password", Conexion.Conectar());
+                    cmd2.Parameters.AddWithValue("@Usuario", txtUsr.Text);
+                    cmd2.Parameters.AddWithValue("@Password", txtPass.Text);
+
+                    long UsuarioID = (long)cmd2.ExecuteScalar();
+
+                    //MessageBox.Show("El valor de la variable existe es: " + Acceso);
+                    //MessageBox.Show("El valor de la variabl ID Usuario es: " + UsuarioID);
+
+                    if (Acceso <= 5 && Acceso >= 0)
+                    {
+                        MessageBox.Show("Se ha iniciado sesion correctamente");
+                        MenuP Men = new MenuP(Acceso, UsuarioID);
+                        this.Hide();
+                        Men.Show();
+                    }
+                    else
+                        MessageBox.Show("No se pudo iniciar sesion correctamente");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -64,4 +72,5 @@ namespace BDD_PIA_E4
 
         }
     }
-}
+ }
+

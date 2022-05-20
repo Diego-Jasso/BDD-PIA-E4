@@ -45,7 +45,7 @@ namespace CshaepBDD
                 textBox6.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox4.Text = ((DateTime)dataGridView1.CurrentRow.Cells[4].Value).ToString("yyyy-MM-dd");
                 textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 textBox7.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 textBox8.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
