@@ -59,9 +59,15 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID);
             cmdl.Parameters.AddWithValue("@Proveedor_id", txtProvID.Text);
             cmdl.Parameters.AddWithValue("@Fecha", dateTimePickerFecha.Text);
-
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron modificados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron modificados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewOrd.DataSource = llenar_Grid();
         }
 
@@ -71,9 +77,16 @@ namespace BDD_PIA_E4
             string Actualizar = "DELETE OrdenCompra WHERE Orden_id = @OrdenID";
             SqlCommand cmdl = new SqlCommand(Actualizar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID);
-
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewOrd.DataSource = llenar_Grid();
         }
 

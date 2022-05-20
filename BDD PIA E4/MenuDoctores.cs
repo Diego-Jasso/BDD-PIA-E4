@@ -46,10 +46,15 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@EmpleadoID", textBox1.Text);
             cmdl.Parameters.AddWithValue("@Cedula", textBox2.Text);
             cmdl.Parameters.AddWithValue("@EspecialidadID", textBox3.Text);
-
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridView1.DataSource = llenar_Grid();
         }
 
@@ -82,10 +87,16 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@IDAnt", textBox1.Text);
             cmdl.Parameters.AddWithValue("@Cedula", textBox2.Text);
             cmdl.Parameters.AddWithValue("@Especialidad_id", textBox3.Text);
-
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show("El doctor fue editado");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -98,13 +109,14 @@ namespace CshaepBDD
             try
             {
                 cmdl.ExecuteNonQuery();
-                MessageBox.Show(" El doctor fue eliminado");
+                MessageBox.Show(" Los datos fueron eliminados exitosamente");
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
+            dataGridView1.DataSource = llenar_Grid();
         }
     }
 }
+

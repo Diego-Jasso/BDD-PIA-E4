@@ -47,10 +47,15 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@Apellidos", textBox3.Text);
             cmdl.Parameters.AddWithValue("@Telefono", textBox4.Text);
             cmdl.Parameters.AddWithValue("@FechaNacimiento", textBox5.Text);
-
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+           catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridView1.DataSource = llenar_Grid();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,11 +86,16 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@Apellidos", textBox3.Text);
             cmdl.Parameters.AddWithValue("@Telefono", textBox4.Text);
             cmdl.Parameters.AddWithValue("@FechaNacimiento", textBox5.Text);
-
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show(" El paciente fue editado");
-            this.Close();
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron editados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -98,13 +108,13 @@ namespace CshaepBDD
             try
             {
                 cmdl.ExecuteNonQuery();
-                MessageBox.Show(" El paciente fue eliminado");
+                MessageBox.Show("Los datos fueron eliminados exitosamente");
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Close();
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void label1_Click(object sender, EventArgs e)

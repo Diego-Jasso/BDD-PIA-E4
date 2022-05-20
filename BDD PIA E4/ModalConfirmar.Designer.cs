@@ -84,6 +84,7 @@ namespace Consultas
             this.Mensaje.Size = new System.Drawing.Size(211, 89);
             this.Mensaje.TabIndex = 2;
             this.Mensaje.Text = "Mensaje Predeterminado";
+            this.Mensaje.Click += new System.EventHandler(this.Mensaje_Click);
             // 
             // ModalConfirmar
             // 

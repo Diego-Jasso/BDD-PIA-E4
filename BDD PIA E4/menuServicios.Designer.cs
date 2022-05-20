@@ -167,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Name = "menuServicios";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.menuServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

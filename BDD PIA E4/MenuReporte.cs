@@ -68,9 +68,16 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@Diagnostico", textBox5.Text);
             cmdl.Parameters.AddWithValue("@Altura", textBox7.Text);
             cmdl.Parameters.AddWithValue("@Peso", textBox8.Text);
-            cmdl.ExecuteNonQuery();
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            MessageBox.Show("Los datos fueron agregados exitosamente");
             dataGridView1.DataSource = llenar_Grid();
         }
 
@@ -86,11 +93,11 @@ namespace CshaepBDD
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show(" El Reporte fue eliminado");
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Close();
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

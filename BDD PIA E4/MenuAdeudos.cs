@@ -130,7 +130,7 @@ namespace CshaepBDD
             try
             {
                 cmdl.ExecuteNonQuery();
-                MessageBox.Show(" El adeudo fue eliminado");
+                MessageBox.Show(" Los datos fueron eliminados exitosamente");
             }
             catch (SqlException ex)
             {

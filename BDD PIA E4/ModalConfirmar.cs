@@ -12,5 +12,10 @@ namespace Consultas
             this.boton_aceptar.DialogResult = DialogResult.OK;
             this.boton_cancelar.DialogResult = DialogResult.Cancel;
         }
+
+        private void Mensaje_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
