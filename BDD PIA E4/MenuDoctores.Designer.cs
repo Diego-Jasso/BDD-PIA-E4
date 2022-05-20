@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textespecialidad_id = new System.Windows.Forms.TextBox();
+            this.textcedula = new System.Windows.Forms.TextBox();
+            this.textempleado_id = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,32 +44,33 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(151, 219);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 219);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(469, 147);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 147);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox3
+            // textespecialidad_id
             // 
-            this.textBox3.Location = new System.Drawing.Point(308, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 19;
+            this.textespecialidad_id.Location = new System.Drawing.Point(308, 122);
+            this.textespecialidad_id.Name = "textespecialidad_id";
+            this.textespecialidad_id.Size = new System.Drawing.Size(100, 20);
+            this.textespecialidad_id.TabIndex = 19;
+            this.textespecialidad_id.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox2
+            // textcedula
             // 
-            this.textBox2.Location = new System.Drawing.Point(308, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 18;
+            this.textcedula.Location = new System.Drawing.Point(308, 96);
+            this.textcedula.Name = "textcedula";
+            this.textcedula.Size = new System.Drawing.Size(100, 20);
+            this.textcedula.TabIndex = 18;
             // 
-            // textBox1
+            // textempleado_id
             // 
-            this.textBox1.Location = new System.Drawing.Point(308, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.textempleado_id.Location = new System.Drawing.Point(308, 66);
+            this.textempleado_id.Name = "textempleado_id";
+            this.textempleado_id.Size = new System.Drawing.Size(100, 20);
+            this.textempleado_id.TabIndex = 17;
             // 
             // label3
             // 
@@ -137,9 +138,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textespecialidad_id);
+            this.Controls.Add(this.textcedula);
+            this.Controls.Add(this.textempleado_id);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -156,9 +157,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textespecialidad_id;
+        private System.Windows.Forms.TextBox textcedula;
+        private System.Windows.Forms.TextBox textempleado_id;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

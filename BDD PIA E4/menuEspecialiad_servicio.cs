@@ -27,7 +27,7 @@ namespace BDD_PIA_E4
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Especialidad_Servicio";
+            string consulta = "select * from VistaEspecialidadServicio";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -39,9 +39,9 @@ namespace BDD_PIA_E4
         {
             try
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textespecialidad_id.Text = dataGridView1.CurrentRow.Cells["Especialidad_id"].Value.ToString();
+                texttiposervicio_id.Text = dataGridView1.CurrentRow.Cells["TipoServicio_id"].Value.ToString();
+                textprioridad.Text = dataGridView1.CurrentRow.Cells["Prioridad"].Value.ToString();
             }
             catch
             {
@@ -54,9 +54,9 @@ namespace BDD_PIA_E4
             Conexion.Conectar();
             string insertar = "Insert into Especialidad_Servicio(Especialidad_id, TipoServicio_id, Prioridad) values(@Especialidad_id, @Servicio_id, @Prioridad)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Especialidad_id", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Servicio_id", textBox2.Text);
-            cmdl.Parameters.AddWithValue("@Prioridad", textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Especialidad_id", textespecialidad_id.Text);
+            cmdl.Parameters.AddWithValue("@Servicio_id", texttiposervicio_id.Text);
+            cmdl.Parameters.AddWithValue("@Prioridad", textprioridad.Text);
 
             try
             {
@@ -79,9 +79,9 @@ namespace BDD_PIA_E4
                 "set Especialidad_id = @Especialidad_id , TipoServicio_id = @Servicio_id , Prioridad = @Prioridad " +
                 "where Especialidad_id = @Especialidad_id";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Especialidad_id", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Servicio_id", textBox2.Text);
-            cmdl.Parameters.AddWithValue("@Prioridad", textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Especialidad_id", textespecialidad_id.Text);
+            cmdl.Parameters.AddWithValue("@Servicio_id", texttiposervicio_id.Text);
+            cmdl.Parameters.AddWithValue("@Prioridad", textprioridad.Text);
 
             try
             {
@@ -103,7 +103,7 @@ namespace BDD_PIA_E4
             string eliminar = "delete from Especialidad_Servicio " +
                  "where Especialidad_id = @Especialidad_id";
             SqlCommand cmdl = new SqlCommand(eliminar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Especialidad_id", textBox1.Text);
+            cmdl.Parameters.AddWithValue("@Especialidad_id", textespecialidad_id.Text);
             try
             {
                 cmdl.ExecuteNonQuery();

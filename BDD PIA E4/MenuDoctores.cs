@@ -30,7 +30,7 @@ namespace CshaepBDD
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Doctores";
+            string consulta = "select * from VistaDoctoresD";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -41,11 +41,11 @@ namespace CshaepBDD
         private void button1_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string insertar = "Insert into Doctores(Empleado_Id,Cedula,Especialidad_id) values(@EmpleadoID,@Cedula,@EspecialidadID)";
+            string insertar = "EXEC ValidarDoctorMed @EmpleadoID, @Cedula, @EspecialidadID ";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@EmpleadoID", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Cedula", textBox2.Text);
-            cmdl.Parameters.AddWithValue("@EspecialidadID", textBox3.Text);
+            cmdl.Parameters.AddWithValue("@EmpleadoID", textempleado_id.Text);
+            cmdl.Parameters.AddWithValue("@Cedula", textcedula.Text);
+            cmdl.Parameters.AddWithValue("@EspecialidadID", textespecialidad_id.Text);
             try
             {
                 cmdl.ExecuteNonQuery();
@@ -62,9 +62,9 @@ namespace CshaepBDD
         {
             try
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textempleado_id.Text = dataGridView1.CurrentRow.Cells["Empleado_id"].Value.ToString();
+                textcedula.Text = dataGridView1.CurrentRow.Cells["Cedula"].Value.ToString();
+                textespecialidad_id.Text = dataGridView1.CurrentRow.Cells["Especialidad_id"].Value.ToString();
             }
             catch
             {
@@ -83,9 +83,9 @@ namespace CshaepBDD
                 "set Empleado_Id = @Empleado_ID ,Cedula = @Cedula ,Especialidad_id = @Especialidad_id " +
                 "where Empleado_Id = @Empleado_ID";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Empleado_ID", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Cedula", textBox2.Text);
-            cmdl.Parameters.AddWithValue("@Especialidad_id", textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Empleado_ID", textempleado_id.Text);
+            cmdl.Parameters.AddWithValue("@Cedula", textcedula.Text);
+            cmdl.Parameters.AddWithValue("@Especialidad_id", textespecialidad_id.Text);
             try
             {
                 cmdl.ExecuteNonQuery();
@@ -104,7 +104,7 @@ namespace CshaepBDD
             string eliminar = "delete from  Doctores " +
                 "where Empleado_Id= @Empleado_Id";
             SqlCommand cmdl = new SqlCommand(eliminar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Empleado_Id", textBox1.Text);
+            cmdl.Parameters.AddWithValue("@Empleado_Id", textempleado_id.Text);
             try
             {
                 cmdl.ExecuteNonQuery();
@@ -115,6 +115,11 @@ namespace CshaepBDD
                 MessageBox.Show(ex.Message);
             }
             dataGridView1.DataSource = llenar_Grid();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

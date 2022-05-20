@@ -112,7 +112,7 @@ namespace BDD_PIA_E4
             this.panelInventariosSub.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInventariosSub.Location = new System.Drawing.Point(0, 695);
             this.panelInventariosSub.Name = "panelInventariosSub";
-            this.panelInventariosSub.Size = new System.Drawing.Size(233, 157);
+            this.panelInventariosSub.Size = new System.Drawing.Size(233, 133);
             this.panelInventariosSub.TabIndex = 0;
             // 
             // button11
@@ -128,7 +128,7 @@ namespace BDD_PIA_E4
             this.button11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.button11.Location = new System.Drawing.Point(0, 107);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(233, 24);
+            this.button11.Size = new System.Drawing.Size(233, 26);
             this.button11.TabIndex = 8;
             this.button11.Text = "Proveedor de insumos";
             this.button11.UseVisualStyleBackColor = false;

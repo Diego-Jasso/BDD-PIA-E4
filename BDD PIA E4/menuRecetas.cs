@@ -27,7 +27,7 @@ namespace BDD_PIA_E4
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Receta_conceptos";
+            string consulta = "select * from RecetaVista";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -39,9 +39,9 @@ namespace BDD_PIA_E4
         {
             try
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textreporte_id.Text = dataGridView1.CurrentRow.Cells["Reporte_id"].Value.ToString();
+                textmedicamento_id.Text = dataGridView1.CurrentRow.Cells["Medicamento_id"].Value.ToString();
+                textcantidad.Text = dataGridView1.CurrentRow.Cells["Dosis"].Value.ToString();
             }
             catch
             {
@@ -52,11 +52,11 @@ namespace BDD_PIA_E4
         private void button1_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string insertar = "Insert into Receta_Conceptos(Reporte_id,Medicamento_id,Cantidad) values(@Reporte_id , @Medicamento_id , @Cantidad)";
+            string insertar = "Insert into Receta_Conceptos(Medicamento_id,Cantidad) values(, @Medicamento_id , @Cantidad)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Reporte_id", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Medicamento_id", textBox2.Text);
-            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Reporte_id", textreporte_id.Text);
+            cmdl.Parameters.AddWithValue("@Medicamento_id", textmedicamento_id.Text);
+            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textcantidad.Text);
 
             try
             {
@@ -76,12 +76,12 @@ namespace BDD_PIA_E4
         {
             Conexion.Conectar();
             string insertar = "update Receta_conceptos " +
-                "set Reporte_id = @Reporte_id, Medicamento_id = @Medicamento_id , Cantidad = @Cantidad " +
+                "set Medicamento_id = @Medicamento_id , Cantidad = @Cantidad " +
                 "where Reporte_id = @Reporte_id";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar()); 
-            cmdl.Parameters.AddWithValue("@Reporte_id", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Medicamento_id", textBox2.Text);
-            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Reporte_id", textreporte_id.Text);
+            cmdl.Parameters.AddWithValue("@Medicamento_id", textmedicamento_id.Text);
+            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textcantidad.Text);
 
             try
             {
@@ -103,9 +103,9 @@ namespace BDD_PIA_E4
             string eliminar = "delete from Receta_conceptos " +
                "where Reporte_id = @Reporte_id";
             SqlCommand cmdl = new SqlCommand(eliminar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Reporte_id", textBox1.Text);
-            cmdl.Parameters.AddWithValue("@Medicamento_id", textBox2.Text);
-            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textBox3.Text);
+            cmdl.Parameters.AddWithValue("@Reporte_id", textreporte_id.Text);
+            cmdl.Parameters.AddWithValue("@Medicamento_id", textmedicamento_id.Text);
+            cmdl.Parameters.Add("@Cantidad", SqlDbType.Money).Value = Decimal.Parse(textcantidad.Text);
 
             try
             {
