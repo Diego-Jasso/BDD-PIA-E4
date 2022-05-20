@@ -173,12 +173,6 @@
     <Compile Include="MenuPago.Designer.cs">
       <DependentUpon>MenuPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuProveedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuProveedores.Designer.cs">
-      <DependentUpon>MenuProveedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,12 +196,6 @@
     </Compile>
     <Compile Include="OrdenCompra.Designer.cs">
       <DependentUpon>OrdenCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OrdenDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrdenDetalle.Designer.cs">
-      <DependentUpon>OrdenDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -285,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPago.resx">
       <DependentUpon>MenuPago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuProveedores.resx">
-      <DependentUpon>MenuProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPuestos.resx">
       <DependentUpon>MenuPuestos.cs</DependentUpon>

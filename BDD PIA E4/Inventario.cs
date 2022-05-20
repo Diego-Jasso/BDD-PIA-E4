@@ -44,8 +44,15 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@Cantidad", txtCant.Text);
             cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
             cmdl.Parameters.AddWithValue("@Caducidad", dateTimePickerCad.Value);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewInv.DataSource = llenar_Grid();
         }
 
@@ -59,8 +66,16 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@Cantidad", txtCant.Text);
             cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
             cmdl.Parameters.AddWithValue("@Caducidad", dateTimePickerCad.Value);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron modificados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron modificados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewInv.DataSource = llenar_Grid();
         }
 
@@ -70,8 +85,16 @@ namespace BDD_PIA_E4
             string actualizar = "DELETE Inventario WHERE Lote_id = @LoteID";
             SqlCommand cmdl = new SqlCommand(actualizar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@LoteID", txtLoteID.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewInv.DataSource = llenar_Grid();
         }
 

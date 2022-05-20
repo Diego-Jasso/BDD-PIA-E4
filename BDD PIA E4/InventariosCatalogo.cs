@@ -44,9 +44,15 @@ namespace BDD_PIA_E4
             string insertar = "Insert into Catalogo_Insumos(Descripcion) values(@Descripcion)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Descripcion", txtDes.Text);
-            //cmdl.Parameters.AddWithValue("@Imagen", textBox4.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewInvCat.DataSource = llenar_Grid();
         }
 
@@ -63,8 +69,16 @@ namespace BDD_PIA_E4
             SqlCommand cmdl = new SqlCommand(actualizar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@InsumoID", txtInsumoID.Text);
             cmdl.Parameters.AddWithValue("@Descripcion", txtDes.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron modificados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron modificados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewInvCat.DataSource = llenar_Grid();
         }
 
@@ -74,8 +88,16 @@ namespace BDD_PIA_E4
             string Eliminar = "DELETE FROM Catalogo_Insumos WHERE Insumo_id = @InsumoID";
             SqlCommand cmdl = new SqlCommand(Eliminar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@InsumoID", txtInsumoID.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron Eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron Eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewInvCat.DataSource = llenar_Grid();
         }
 

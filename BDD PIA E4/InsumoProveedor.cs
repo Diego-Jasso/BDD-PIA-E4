@@ -54,9 +54,16 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Insumo_id", txtInsumo.Text);
             cmdl.Parameters.AddWithValue("@Proveedor_id", txtProv.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
-            cmdl.Parameters.AddWithValue("@Precio", txtPreci.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            cmdl.Parameters.AddWithValue("@Precio", txtPreci.Text); 
+            try 
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
             dataGridViewInsumoProv.DataSource = llenar_Grid();
         }
 
@@ -69,8 +76,16 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Proveedor_id", txtProv.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
             cmdl.Parameters.AddWithValue("@Precio", txtPreci.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron actualizados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron actualizados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewInsumoProv.DataSource = llenar_Grid();
         }
 
@@ -81,8 +96,15 @@ namespace FaltanteInventarios
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Insumo_id", txtInsumo.Text);
             cmdl.Parameters.AddWithValue("@Proveedor_id", txtProv.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewInsumoProv.DataSource = llenar_Grid();
         }
 

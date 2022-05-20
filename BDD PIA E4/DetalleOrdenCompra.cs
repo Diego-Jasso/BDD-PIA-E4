@@ -56,8 +56,16 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
             cmdl.Parameters.AddWithValue("@Costo", txtCosto.Text);
             cmdl.Parameters.AddWithValue("@IVA", txtIva.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewOrdenDetalle.DataSource = llenar_Grid();
         }
 
@@ -71,8 +79,16 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
             cmdl.Parameters.AddWithValue("@Costo", txtCosto.Text);
             cmdl.Parameters.AddWithValue("@IVA", txtIva.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron modificados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron modificados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewOrdenDetalle.DataSource = llenar_Grid();
         }
 
@@ -83,8 +99,16 @@ namespace FaltanteInventarios
             SqlCommand cmdl = new SqlCommand(Eliminar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@InsumoID", txtInsumo.Text);
             cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron Eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron Eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
             dataGridViewOrdenDetalle.DataSource = llenar_Grid();
         }
 

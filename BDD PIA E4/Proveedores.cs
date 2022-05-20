@@ -45,8 +45,15 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@Telefono", txtTel.Text);
             cmdl.Parameters.AddWithValue("@Correo", txtCor.Text);
             cmdl.Parameters.AddWithValue("@Direccion", txtDir.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewProv.DataSource = llenar_Grid();
         }
 
@@ -69,8 +76,16 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@Telefono", txtTel.Text);
             cmdl.Parameters.AddWithValue("@Correo", txtCor.Text);
             cmdl.Parameters.AddWithValue("@Direccion", txtDir.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron modificados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron modificados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridViewProv.DataSource = llenar_Grid();
         }
 
@@ -83,8 +98,15 @@ namespace BDD_PIA_E4
             cmdl.Parameters.AddWithValue("@Telefono", txtTel.Text);
             cmdl.Parameters.AddWithValue("@Correo", txtCor.Text);
             cmdl.Parameters.AddWithValue("@Direccion", txtDir.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron eliminados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewProv.DataSource = llenar_Grid();
         }
 

@@ -56,12 +56,12 @@ namespace FaltanteInventarios
             {
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron agregados exitosamente");
-                dataGridViewAdIns.DataSource = llenar_Grid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            dataGridViewAdIns.DataSource = llenar_Grid();
         }
             
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -72,8 +72,16 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Adeudo_id", txtAdeudo.Text);
             cmdl.Parameters.AddWithValue("@Lote_id", txtLote.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron actualizados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron actualizados exitosamente");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewAdIns.DataSource = llenar_Grid();
         }
 
@@ -84,8 +92,15 @@ namespace FaltanteInventarios
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Adeudo_id", txtAdeudo.Text);
             cmdl.Parameters.AddWithValue("@Lote_id", txtLote.Text);
-            cmdl.ExecuteNonQuery();
-            MessageBox.Show("Los datos fueron eliminados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron eliminados exitosamente"); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridViewAdIns.DataSource = llenar_Grid();
         }
 

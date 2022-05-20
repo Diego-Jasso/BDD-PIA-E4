@@ -89,10 +89,15 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@CURP", textBox8.Text);
             cmdl.Parameters.AddWithValue("@HoraEntrada", textBox7.Text);
             cmdl.Parameters.AddWithValue("@HoraSalida", textBox6.Text);
-
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show("Los datos fueron agregados exitosamente");
+            try
+            {
+                cmdl.ExecuteNonQuery();
+                MessageBox.Show("Los datos fueron agregados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataGridView1.DataSource = llenar_Grid();
         }
 
@@ -122,11 +127,17 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@CURP", textBox8.Text);
             cmdl.Parameters.AddWithValue("@HoraEntrada", textBox7.Text);
             cmdl.Parameters.AddWithValue("@HoraSalida", textBox6.Text);
+            try
+            {
+                cmdl.ExecuteNonQuery();
 
-            cmdl.ExecuteNonQuery();
-
-            MessageBox.Show("El Empleado fue editado");
-            this.Close();
+                MessageBox.Show("Los datos fueron editados exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void eliminarEmpleadoBtn_Click(object sender, EventArgs e)
@@ -141,11 +152,11 @@ namespace CshaepBDD
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show(" El empleado fue eliminado");
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Close();
+            dataGridView1.DataSource = llenar_Grid();
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)

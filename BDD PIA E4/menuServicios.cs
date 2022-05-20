@@ -125,5 +125,10 @@ namespace BDD_PIA_E4
 
             dataGridView1.DataSource = llenar_Grid();
         }
+
+        private void menuServicios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
