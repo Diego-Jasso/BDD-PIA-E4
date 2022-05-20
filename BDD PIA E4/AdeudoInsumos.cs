@@ -29,7 +29,7 @@ namespace FaltanteInventarios
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Adeudo_Insumos";
+            string consulta = "select * from VInsumos";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -39,9 +39,9 @@ namespace FaltanteInventarios
 
         private void dataGridViewAdIns_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtAdeudo.Text = dataGridViewAdIns.CurrentRow.Cells[0].Value.ToString();
-            txtLote.Text = dataGridViewAdIns.CurrentRow.Cells[1].Value.ToString();
-            txtCantidad.Text = dataGridViewAdIns.CurrentRow.Cells[2].Value.ToString();
+            txtAdeudo.Text = dataGridViewAdIns.CurrentRow.Cells["Adeudo_id"].Value.ToString();
+            txtLote.Text = dataGridViewAdIns.CurrentRow.Cells["Lote_id"].Value.ToString();
+            txtCantidad.Text = dataGridViewAdIns.CurrentRow.Cells["Cantidad"].Value.ToString();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

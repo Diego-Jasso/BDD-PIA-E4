@@ -13,9 +13,11 @@ namespace BDD_PIA_E4
 {
     public partial class menuCondicion_pac : Form
     {
-        public menuCondicion_pac()
+        private string curp_pac; 
+        public menuCondicion_pac(string CURP_PAC)
         {
             InitializeComponent();
+            this.curp_pac = CURP_PAC;
             dataGridView1.DataSource = llenar_Grid();
         }
 
@@ -27,7 +29,7 @@ namespace BDD_PIA_E4
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Condicion_Pac";
+            string consulta = $"select * from VerCondicionPac WHERE paciente_id = '{this.curp_pac}'";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

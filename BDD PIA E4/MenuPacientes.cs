@@ -111,5 +111,12 @@ namespace CshaepBDD
         {
 
         }
+
+        private void boton_condiciones_Click(object sender, EventArgs e)
+        {
+            var curp = dataGridView1.CurrentRow.Cells["CURP"].Value.ToString();
+            Form condicion = new menuCondicion_pac(curp);
+            condicion.Show();
+        }
     }
 }
