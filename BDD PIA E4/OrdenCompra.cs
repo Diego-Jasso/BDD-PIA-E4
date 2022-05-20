@@ -24,7 +24,7 @@ namespace BDD_PIA_E4
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from OrdenCompra";
+            string consulta = "SELECT oc.Orden_id,oc.Proveedor_id,P.Nombre,oc.Fecha FROM OrdenCompra oc INNER JOIN Proveedores p on p.Proveedor_id = oc.Proveedor_id";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -56,9 +56,9 @@ namespace BDD_PIA_E4
             Conexion.Conectar();
             string Actualizar = "UPDATE OrdenCompra SET Proveedor_id = @Proveedor_id, Fecha = @Fecha WHERE Orden_id = @OrdenID";
             SqlCommand cmdl = new SqlCommand(Actualizar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID);
+            cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID.Text);
             cmdl.Parameters.AddWithValue("@Proveedor_id", txtProvID.Text);
-            cmdl.Parameters.AddWithValue("@Fecha", dateTimePickerFecha.Text);
+            cmdl.Parameters.AddWithValue("@Fecha", dateTimePickerFecha.Value);
             try
             {
                 cmdl.ExecuteNonQuery();
@@ -74,15 +74,15 @@ namespace BDD_PIA_E4
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string Actualizar = "DELETE OrdenCompra WHERE Orden_id = @OrdenID";
+            string Actualizar = "DELETE FROM OrdenCompra WHERE Orden_id = @OrdenID";
             SqlCommand cmdl = new SqlCommand(Actualizar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID);
+            cmdl.Parameters.AddWithValue("@OrdenID", txtOrdID.Text);
             try
             {
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron eliminados exitosamente");
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -97,9 +97,9 @@ namespace BDD_PIA_E4
 
         private void dataGridViewOrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtOrdID.Text = dataGridViewOrd.CurrentRow.Cells[0].Value.ToString();
-            txtProvID.Text = dataGridViewOrd.CurrentRow.Cells[1].Value.ToString();
-            dateTimePickerFecha.Value = (DateTime)dataGridViewOrd.CurrentRow.Cells[2].Value;
+            txtOrdID.Text = dataGridViewOrd.CurrentRow.Cells["Orden_id"].Value.ToString();
+            txtProvID.Text = dataGridViewOrd.CurrentRow.Cells["Proveedor_id"].Value.ToString();
+            dateTimePickerFecha.Value = (DateTime)dataGridViewOrd.CurrentRow.Cells["Fecha"].Value;
             
         }
 

@@ -112,7 +112,7 @@ namespace BDD_PIA_E4
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 25;
-            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Text = "Modificar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -137,6 +137,7 @@ namespace BDD_PIA_E4
             // 
             // dateTimePickerFecha
             // 
+            this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(374, 55);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 20);

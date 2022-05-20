@@ -38,8 +38,6 @@ namespace FaltanteInventarios
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtInsumo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtOrdenID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -121,22 +119,6 @@ namespace FaltanteInventarios
             this.label2.TabIndex = 30;
             this.label2.Text = "Insumo ID";
             // 
-            // txtOrdenID
-            // 
-            this.txtOrdenID.Location = new System.Drawing.Point(234, 12);
-            this.txtOrdenID.Name = "txtOrdenID";
-            this.txtOrdenID.Size = new System.Drawing.Size(81, 20);
-            this.txtOrdenID.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Orden ID";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(477, 291);
@@ -190,8 +172,6 @@ namespace FaltanteInventarios
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtInsumo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtOrdenID);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -218,8 +198,6 @@ namespace FaltanteInventarios
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtInsumo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtOrdenID;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;

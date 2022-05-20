@@ -106,7 +106,7 @@ namespace Consultas
             this.tabs_citas.Location = new System.Drawing.Point(12, 25);
             this.tabs_citas.Name = "tabs_citas";
             this.tabs_citas.SelectedIndex = 0;
-            this.tabs_citas.Size = new System.Drawing.Size(777, 535);
+            this.tabs_citas.Size = new System.Drawing.Size(760, 712);
             this.tabs_citas.TabIndex = 1;
             this.tabs_citas.Enter += new System.EventHandler(this.tabs_citas_Enter);
             // 
@@ -164,7 +164,7 @@ namespace Consultas
             this.tab_todo.Location = new System.Drawing.Point(4, 22);
             this.tab_todo.Name = "tab_todo";
             this.tab_todo.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_todo.Size = new System.Drawing.Size(769, 509);
+            this.tab_todo.Size = new System.Drawing.Size(752, 686);
             this.tab_todo.TabIndex = 1;
             this.tab_todo.Text = "Ver todas";
             this.tab_todo.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@ namespace Consultas
             this.panel_modificar.Controls.Add(this.boton_acept_modif);
             this.panel_modificar.Controls.Add(this.tableLayoutPanel2);
             this.panel_modificar.Enabled = false;
-            this.panel_modificar.Location = new System.Drawing.Point(12, 374);
+            this.panel_modificar.Location = new System.Drawing.Point(12, 551);
             this.panel_modificar.Name = "panel_modificar";
             this.panel_modificar.Size = new System.Drawing.Size(750, 129);
             this.panel_modificar.TabIndex = 10;
@@ -322,7 +322,7 @@ namespace Consultas
             // boton_atualizar_todos
             // 
             this.boton_atualizar_todos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.boton_atualizar_todos.Location = new System.Drawing.Point(304, 334);
+            this.boton_atualizar_todos.Location = new System.Drawing.Point(304, 511);
             this.boton_atualizar_todos.Name = "boton_atualizar_todos";
             this.boton_atualizar_todos.Size = new System.Drawing.Size(98, 23);
             this.boton_atualizar_todos.TabIndex = 9;
@@ -391,7 +391,7 @@ namespace Consultas
             // boton_todos_sig
             // 
             this.boton_todos_sig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.boton_todos_sig.Location = new System.Drawing.Point(148, 334);
+            this.boton_todos_sig.Location = new System.Drawing.Point(148, 511);
             this.boton_todos_sig.Name = "boton_todos_sig";
             this.boton_todos_sig.Size = new System.Drawing.Size(110, 23);
             this.boton_todos_sig.TabIndex = 6;
@@ -402,7 +402,7 @@ namespace Consultas
             // boton_todos_ant
             // 
             this.boton_todos_ant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.boton_todos_ant.Location = new System.Drawing.Point(9, 334);
+            this.boton_todos_ant.Location = new System.Drawing.Point(9, 511);
             this.boton_todos_ant.Name = "boton_todos_ant";
             this.boton_todos_ant.Size = new System.Drawing.Size(113, 23);
             this.boton_todos_ant.TabIndex = 5;
@@ -419,7 +419,7 @@ namespace Consultas
             this.dg_Todascitas.Location = new System.Drawing.Point(9, 102);
             this.dg_Todascitas.Name = "dg_Todascitas";
             this.dg_Todascitas.ReadOnly = true;
-            this.dg_Todascitas.Size = new System.Drawing.Size(754, 217);
+            this.dg_Todascitas.Size = new System.Drawing.Size(737, 394);
             this.dg_Todascitas.TabIndex = 2;
             // 
             // tab_nueva
@@ -565,8 +565,9 @@ namespace Consultas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(801, 572);
+            this.ClientSize = new System.Drawing.Size(784, 749);
             this.Controls.Add(this.tabs_citas);
+            this.MaximizeBox = false;
             this.Name = "CitasRecepcion";
             this.Text = "Citas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

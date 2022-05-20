@@ -41,7 +41,6 @@ namespace FaltanteInventarios
 
         private void dataGridViewOrdenDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtOrdenID.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Orden_id"].Value.ToString();
             txtInsumo.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Insumo_id"].Value.ToString();
             txtCantidad.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Cantidad"].Value.ToString();
             txtCosto.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Costo"].Value.ToString();
@@ -53,7 +52,7 @@ namespace FaltanteInventarios
             Conexion.Conectar();
             string insertar = "Insert into OrdenCompra_Conceptos(Orden_id, Insumo_id, Cantidad, Costo, IVA) values(@Orden_id, @Insumo_id, @Cantidad, @Costo, @IVA)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
+            cmdl.Parameters.AddWithValue("@Orden_id", this.orden);
             cmdl.Parameters.AddWithValue("@Insumo_id", txtInsumo.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
             cmdl.Parameters.AddWithValue("@Costo", txtCosto.Text);
@@ -74,13 +73,27 @@ namespace FaltanteInventarios
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string actualizar = "UPDATE OrdenCompra_Conceptos SET Orden_id = @Orden_id, Insumo_id = @Insumo_id, Cantidad = @Cantidad, Costo = @Costo, IVA = @IVA";
+            string actualizar = "UPDATE OrdenCompra_Conceptos SET Insumo_id = @Insumo_id, Cantidad = @Cantidad, Costo = @Costo, IVA = @IVA WHERE Insumo_id = @Insumo_ant AND Orden_id = @Orden_id";
             SqlCommand cmdl = new SqlCommand(actualizar, Conexion.Conectar());
-            cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
+            string insumoant;
+
+
+            try
+            {
+                insumoant = this.dataGridViewOrdenDetalle.CurrentRow.Cells["Insumo_id"].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No ha seleccionado ningun elemento");
+                return;
+            }
+            
             cmdl.Parameters.AddWithValue("@Insumo_id", txtInsumo.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
             cmdl.Parameters.AddWithValue("@Costo", txtCosto.Text);
             cmdl.Parameters.AddWithValue("@IVA", txtIva.Text);
+            cmdl.Parameters.AddWithValue("@Insumo_ant", insumoant);
+            cmdl.Parameters.AddWithValue("@Orden_id", this.orden);
             try
             {
                 cmdl.ExecuteNonQuery();
@@ -100,7 +113,7 @@ namespace FaltanteInventarios
             string Eliminar = "DELETE FROM OrdenCompra_Conceptos WHERE Insumo_id = @InsumoID AND Orden_id = @Orden_id";
             SqlCommand cmdl = new SqlCommand(Eliminar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@InsumoID", txtInsumo.Text);
-            cmdl.Parameters.AddWithValue("@Orden_id", txtOrdenID.Text);
+            cmdl.Parameters.AddWithValue("@Orden_id", this.orden);
             try
             {
                 cmdl.ExecuteNonQuery();
