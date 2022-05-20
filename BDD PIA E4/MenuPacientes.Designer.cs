@@ -43,6 +43,7 @@ namespace CshaepBDD
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.boton_condiciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,11 +167,22 @@ namespace CshaepBDD
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // boton_condiciones
+            // 
+            this.boton_condiciones.Location = new System.Drawing.Point(469, 138);
+            this.boton_condiciones.Name = "boton_condiciones";
+            this.boton_condiciones.Size = new System.Drawing.Size(184, 23);
+            this.boton_condiciones.TabIndex = 14;
+            this.boton_condiciones.Text = "Ver Historial Médico";
+            this.boton_condiciones.UseVisualStyleBackColor = true;
+            this.boton_condiciones.Click += new System.EventHandler(this.boton_condiciones_Click);
+            // 
             // MenuPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.boton_condiciones);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox5);
@@ -210,6 +222,7 @@ namespace CshaepBDD
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button boton_condiciones;
     }
 }
 

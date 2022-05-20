@@ -56,7 +56,6 @@ namespace BDD_PIA_E4
             this.btnReporte = new System.Windows.Forms.Button();
             this.panelPacientesSub = new System.Windows.Forms.Panel();
             this.btnEliminarP = new System.Windows.Forms.Button();
-            this.btnModificarP = new System.Windows.Forms.Button();
             this.btnAgregarP = new System.Windows.Forms.Button();
             this.btnPac = new System.Windows.Forms.Button();
             this.panelCitasSub = new System.Windows.Forms.Panel();
@@ -531,7 +530,6 @@ namespace BDD_PIA_E4
             // 
             this.panelPacientesSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
             this.panelPacientesSub.Controls.Add(this.btnEliminarP);
-            this.panelPacientesSub.Controls.Add(this.btnModificarP);
             this.panelPacientesSub.Controls.Add(this.btnAgregarP);
             this.panelPacientesSub.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPacientesSub.Location = new System.Drawing.Point(0, 282);
@@ -550,32 +548,13 @@ namespace BDD_PIA_E4
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnEliminarP.Location = new System.Drawing.Point(0, 60);
+            this.btnEliminarP.Location = new System.Drawing.Point(0, 30);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(233, 31);
             this.btnEliminarP.TabIndex = 3;
             this.btnEliminarP.Text = "Tipos de condiciones";
             this.btnEliminarP.UseVisualStyleBackColor = false;
             this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
-            // 
-            // btnModificarP
-            // 
-            this.btnModificarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
-            this.btnModificarP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModificarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
-            this.btnModificarP.FlatAppearance.BorderSize = 0;
-            this.btnModificarP.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(73)))));
-            this.btnModificarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(92)))), ((int)(((byte)(124)))));
-            this.btnModificarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarP.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnModificarP.Location = new System.Drawing.Point(0, 30);
-            this.btnModificarP.Name = "btnModificarP";
-            this.btnModificarP.Size = new System.Drawing.Size(233, 30);
-            this.btnModificarP.TabIndex = 2;
-            this.btnModificarP.Text = "Condiciones de Paciente";
-            this.btnModificarP.UseVisualStyleBackColor = false;
-            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
             // 
             // btnAgregarP
             // 
@@ -801,6 +780,7 @@ namespace BDD_PIA_E4
             this.Controls.Add(this.panelMenuLat);
             this.Name = "MenuP";
             this.Text = "MenuP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuP_FormClosing);
             this.Load += new System.EventHandler(this.MenuP_Load);
             this.panelMenuLat.ResumeLayout(false);
             this.panelInventariosSub.ResumeLayout(false);
@@ -834,7 +814,6 @@ namespace BDD_PIA_E4
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Panel panelPacientesSub;
         private System.Windows.Forms.Button btnEliminarP;
-        private System.Windows.Forms.Button btnModificarP;
         private System.Windows.Forms.Button btnAgregarP;
         private System.Windows.Forms.Button btnPac;
         private System.Windows.Forms.Panel panel1;

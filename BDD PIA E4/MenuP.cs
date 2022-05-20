@@ -204,11 +204,6 @@ namespace BDD_PIA_E4
             Mostrarform(new MenuReporte());
         }
 
-        private void btnModificarP_Click(object sender, EventArgs e)
-        {
-            Mostrarform(new menuCondicion_pac());
-        }
-
         private void btnEliminarP_Click(object sender, EventArgs e)
         {
             Mostrarform(new menuTiposCondicion());
@@ -237,6 +232,16 @@ namespace BDD_PIA_E4
         private void button20_Click(object sender, EventArgs e)
         {
             Mostrarform(new menuServicios());
+        }
+
+        private void btnModificarP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuP_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
