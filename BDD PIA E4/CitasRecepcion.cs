@@ -415,5 +415,36 @@ namespace Consultas
         {
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == null)
+            {
+                MessageBox.Show("No se ha ingresado parametro de busqueda");
+            }
+            else
+            {
+                Conexion.Conectar();
+                DataTable dt = new DataTable();
+                string buscar = "select * FROM Cita_Datos WHERE Cita_id = @ID ";
+                SqlCommand cmdl = new SqlCommand(buscar, Conexion.Conectar());
+                cmdl.Parameters.AddWithValue("@ID", txtBuscar.Text);
+                cmdl.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmdl);
+
+                da.Fill(dt);
+                dg_Todascitas.DataSource = dt;
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

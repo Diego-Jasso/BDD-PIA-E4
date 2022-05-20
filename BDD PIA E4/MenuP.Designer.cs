@@ -718,6 +718,7 @@ namespace BDD_PIA_E4
             this.Controls.Add(this.panelMenuLat);
             this.Name = "MenuP";
             this.Text = "Consultorio Bit-Health";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuP_FormClosing);
             this.Load += new System.EventHandler(this.MenuP_Load);
             this.panelMenuLat.ResumeLayout(false);

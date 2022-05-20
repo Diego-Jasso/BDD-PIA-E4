@@ -36,6 +36,9 @@ namespace Consultas
             this.boton_aceptar_ahora = new System.Windows.Forms.Button();
             this.DescAceptar = new System.Windows.Forms.Label();
             this.tab_todo = new System.Windows.Forms.TabPage();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel_modificar = new System.Windows.Forms.Panel();
             this.boton_cancelar_mod = new System.Windows.Forms.Button();
             this.boton_acept_modif = new System.Windows.Forms.Button();
@@ -156,6 +159,9 @@ namespace Consultas
             // 
             // tab_todo
             // 
+            this.tab_todo.Controls.Add(this.btnBuscar);
+            this.tab_todo.Controls.Add(this.txtBuscar);
+            this.tab_todo.Controls.Add(this.label11);
             this.tab_todo.Controls.Add(this.panel_modificar);
             this.tab_todo.Controls.Add(this.boton_atualizar_todos);
             this.tab_todo.Controls.Add(this.tableLayoutPanel1);
@@ -169,6 +175,34 @@ namespace Consultas
             this.tab_todo.TabIndex = 1;
             this.tab_todo.Text = "Ver todas";
             this.tab_todo.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(660, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 47;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(554, 7);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 46;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(459, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 13);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Buscar por ID:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel_modificar
             // 
@@ -579,6 +613,7 @@ namespace Consultas
             this.tab_activas.ResumeLayout(false);
             this.tab_activas.PerformLayout();
             this.tab_todo.ResumeLayout(false);
+            this.tab_todo.PerformLayout();
             this.panel_modificar.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -636,6 +671,9 @@ namespace Consultas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button boton_cancelar_mod;
         private System.Windows.Forms.Button boton_descancelar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label11;
     }
 }
 
