@@ -44,6 +44,12 @@ namespace CshaepBDD
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.boton_condiciones = new System.Windows.Forms.Button();
+            this.boton_filtrar_nombre = new System.Windows.Forms.Button();
+            this.inp_filtr_nombre = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.boton_filtrar_apellido = new System.Windows.Forms.Button();
+            this.inp_filtr_apellido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,11 +183,69 @@ namespace CshaepBDD
             this.boton_condiciones.UseVisualStyleBackColor = true;
             this.boton_condiciones.Click += new System.EventHandler(this.boton_condiciones_Click);
             // 
+            // boton_filtrar_nombre
+            // 
+            this.boton_filtrar_nombre.Location = new System.Drawing.Point(608, 28);
+            this.boton_filtrar_nombre.Name = "boton_filtrar_nombre";
+            this.boton_filtrar_nombre.Size = new System.Drawing.Size(81, 23);
+            this.boton_filtrar_nombre.TabIndex = 15;
+            this.boton_filtrar_nombre.Text = "Buscar";
+            this.boton_filtrar_nombre.UseVisualStyleBackColor = true;
+            this.boton_filtrar_nombre.Click += new System.EventHandler(this.boton_filtrar_Click);
+            // 
+            // inp_filtr_nombre
+            // 
+            this.inp_filtr_nombre.Location = new System.Drawing.Point(500, 31);
+            this.inp_filtr_nombre.Name = "inp_filtr_nombre";
+            this.inp_filtr_nombre.Size = new System.Drawing.Size(81, 20);
+            this.inp_filtr_nombre.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(431, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Nombre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(431, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Apellidos";
+            // 
+            // boton_filtrar_apellido
+            // 
+            this.boton_filtrar_apellido.Location = new System.Drawing.Point(608, 57);
+            this.boton_filtrar_apellido.Name = "boton_filtrar_apellido";
+            this.boton_filtrar_apellido.Size = new System.Drawing.Size(81, 23);
+            this.boton_filtrar_apellido.TabIndex = 19;
+            this.boton_filtrar_apellido.Text = "Buscar";
+            this.boton_filtrar_apellido.UseVisualStyleBackColor = true;
+            this.boton_filtrar_apellido.Click += new System.EventHandler(this.boton_filtrar_apellido_Click);
+            // 
+            // inp_filtr_apellido
+            // 
+            this.inp_filtr_apellido.Location = new System.Drawing.Point(500, 60);
+            this.inp_filtr_apellido.Name = "inp_filtr_apellido";
+            this.inp_filtr_apellido.Size = new System.Drawing.Size(81, 20);
+            this.inp_filtr_apellido.TabIndex = 20;
+            // 
             // MenuPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.inp_filtr_apellido);
+            this.Controls.Add(this.boton_filtrar_apellido);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.inp_filtr_nombre);
+            this.Controls.Add(this.boton_filtrar_nombre);
             this.Controls.Add(this.boton_condiciones);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -223,6 +287,12 @@ namespace CshaepBDD
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button boton_condiciones;
+        private System.Windows.Forms.Button boton_filtrar_nombre;
+        private System.Windows.Forms.TextBox inp_filtr_nombre;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button boton_filtrar_apellido;
+        private System.Windows.Forms.TextBox inp_filtr_apellido;
     }
 }
 

@@ -105,16 +105,18 @@ namespace FaltanteInventarios
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string insertar = "DELETE Adeudo_Insumos WHERE Adeudo_id = @Adeudo_id AND Lote_id = @Lote_id";
+            string insertar = "DELETE FROM Adeudo_Insumos WHERE Adeudo_id = @Adeudo_id AND Lote_id = @Lote_id";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
+
             cmdl.Parameters.AddWithValue("@Adeudo_id", txtAdeudo.Text);
             cmdl.Parameters.AddWithValue("@Lote_id", txtLote.Text);
+            
             try
             {
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron eliminados exitosamente"); 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }

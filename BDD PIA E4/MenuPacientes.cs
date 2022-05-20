@@ -128,5 +128,31 @@ namespace CshaepBDD
             Form condicion = new menuCondicion_pac(curp);
             condicion.Show();
         }
+
+        private void boton_filtrar_Click(object sender, EventArgs e)
+        {
+            Conexion.Conectar();
+            DataTable dt = new DataTable();
+            string consulta = "select * from Pacientes WHERE Nombre LIKE @nombre + '%'";
+            SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
+            cmd.Parameters.AddWithValue("@nombre", this.inp_filtr_nombre.Text);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            this.dataGridView1.DataSource = dt;
+        }
+
+        private void boton_filtrar_apellido_Click(object sender, EventArgs e)
+        {
+            Conexion.Conectar();
+            DataTable dt = new DataTable();
+            string consulta = "select * from Pacientes WHERE Apellidos LIKE @nombre + '%'";
+            SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
+            cmd.Parameters.AddWithValue("@nombre", this.inp_filtr_apellido.Text);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            this.dataGridView1.DataSource = dt;
+        }
     }
 }

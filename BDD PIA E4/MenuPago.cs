@@ -77,15 +77,15 @@ namespace CshaepBDD
             {
                 try
                 { 
-                cmdl.ExecuteNonQuery();
-                MessageBox.Show("Los datos fueron agregados exitosamente");
-                string actualizar = "EXEC PagarAdeudo @PagoID, @AdeudoID";
-                SqlCommand actualizarAdeudo = new SqlCommand(actualizar, Conexion.Conectar());
-                actualizarAdeudo.Parameters.AddWithValue("@PagoID", textBox1.Text);
-                actualizarAdeudo.Parameters.AddWithValue("@AdeudoID", textBox5.Text);
-                actualizarAdeudo.ExecuteNonQuery();
+                    cmdl.ExecuteNonQuery();
+                    MessageBox.Show("Los datos fueron agregados exitosamente");
+                    string actualizar = "EXEC PagarAdeudo @PagoID, @AdeudoID";
+                    SqlCommand actualizarAdeudo = new SqlCommand(actualizar, Conexion.Conectar());
+                    actualizarAdeudo.Parameters.AddWithValue("@PagoID", textBox1.Text);
+                    actualizarAdeudo.Parameters.AddWithValue("@AdeudoID", textBox5.Text);
+                    actualizarAdeudo.ExecuteNonQuery();
                 }
-                catch (Exception ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
