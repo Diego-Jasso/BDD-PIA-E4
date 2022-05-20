@@ -32,7 +32,6 @@ namespace BDD_PIA_E4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuP));
             this.panelMenuLat = new System.Windows.Forms.Panel();
             this.panelInventariosSub = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -105,7 +104,6 @@ namespace BDD_PIA_E4
             // panelInventariosSub
             // 
             this.panelInventariosSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelInventariosSub.Controls.Add(this.button12);
             this.panelInventariosSub.Controls.Add(this.button11);
             this.panelInventariosSub.Controls.Add(this.button10);
             this.panelInventariosSub.Controls.Add(this.button9);
@@ -116,25 +114,6 @@ namespace BDD_PIA_E4
             this.panelInventariosSub.Name = "panelInventariosSub";
             this.panelInventariosSub.Size = new System.Drawing.Size(233, 157);
             this.panelInventariosSub.TabIndex = 0;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(73)))));
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(92)))), ((int)(((byte)(124)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button12.Location = new System.Drawing.Point(0, 131);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(233, 24);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "Detalles de compra";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -800,7 +779,6 @@ namespace BDD_PIA_E4
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelInventariosSub;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
