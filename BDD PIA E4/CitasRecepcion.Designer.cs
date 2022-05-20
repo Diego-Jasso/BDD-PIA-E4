@@ -567,7 +567,6 @@ namespace Consultas
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 749);
             this.Controls.Add(this.tabs_citas);
-            this.MaximizeBox = false;
             this.Name = "CitasRecepcion";
             this.Text = "Citas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

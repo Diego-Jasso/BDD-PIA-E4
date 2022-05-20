@@ -18,6 +18,7 @@ namespace CshaepBDD
         {
             InitializeComponent();
             dataGridView1.DataSource = llenar_Grid();
+            this.dateTimePicker1.Value = DateTime.Today;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace CshaepBDD
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from Adeudos";
+            string consulta = "select * from ESTATUS_ADEUDO";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -44,14 +45,14 @@ namespace CshaepBDD
         {
             try
             {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textBox6.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textBox2.Text = ((DateTime)dataGridView1.CurrentRow.Cells[2].Value).ToString("yyyy-MM-dd");
-                textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textBox8.Text = (Decimal.Parse(textBox5.Text) * 0.16m).ToString();
-                textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells["Adeudo_id"].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells["Cita_id"].Value.ToString();
+                dateTimePicker1.Value = (DateTime)dataGridView1.CurrentRow.Cells["FechaExpedido"].Value;
+                textBox3.Text = dataGridView1.CurrentRow.Cells["NumeroTarjeta"].Value.ToString();
+                textBox4.Text = dataGridView1.CurrentRow.Cells["empleado_asignador"].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells["Monto"].Value.ToString();
+                textBox8.Text = dataGridView1.CurrentRow.Cells["IVA"].Value.ToString();
+                textBox7.Text = dataGridView1.CurrentRow.Cells["Paciente"].Value.ToString();
             }
             catch
             {
@@ -66,7 +67,7 @@ namespace CshaepBDD
             string insertar = "Insert into Adeudos(Cita_id,FechaExpedido,NumeroTarjeta,empleado_id,Precio,IVA,CURP_Paciente) values(@Cita_id,@FechaExpedido,@Numero,@empleado_id,@Precio,@IVA,@CURP)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Cita_id", textBox6.Text);
-            cmdl.Parameters.AddWithValue("@FechaExpedido", textBox2.Text);
+            cmdl.Parameters.AddWithValue("@FechaExpedido", dateTimePicker1.Value);
             cmdl.Parameters.AddWithValue("@Numero", textBox3.Text);
             cmdl.Parameters.AddWithValue("@empleado_id", textBox4.Text);
             cmdl.Parameters.Add("@Precio", SqlDbType.Money).Value = Decimal.Parse(textBox5.Text); 
@@ -79,7 +80,7 @@ namespace CshaepBDD
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron agregados exitosamente");
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);  
             }
@@ -98,7 +99,7 @@ namespace CshaepBDD
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Adeudo_ID", textBox1.Text);
             cmdl.Parameters.AddWithValue("@Cita_id", textBox6.Text);
-            cmdl.Parameters.AddWithValue("@FechaExpedido", textBox2.Text);
+            cmdl.Parameters.AddWithValue("@FechaExpedido", dateTimePicker1.Value);
             cmdl.Parameters.AddWithValue("@Numero", textBox3.Text);
             cmdl.Parameters.AddWithValue("@empleado_id", textBox4.Text);
             cmdl.Parameters.Add("@Precio", SqlDbType.Money).Value = Decimal.Parse(textBox5.Text);
