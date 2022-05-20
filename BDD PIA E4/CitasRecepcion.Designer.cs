@@ -92,6 +92,7 @@ namespace Consultas
             this.dg_citas_hoy.Location = new System.Drawing.Point(9, 105);
             this.dg_citas_hoy.Name = "dg_citas_hoy";
             this.dg_citas_hoy.ReadOnly = true;
+            this.dg_citas_hoy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_citas_hoy.Size = new System.Drawing.Size(753, 215);
             this.dg_citas_hoy.TabIndex = 0;
             // 
@@ -119,7 +120,7 @@ namespace Consultas
             this.tab_activas.Location = new System.Drawing.Point(4, 22);
             this.tab_activas.Name = "tab_activas";
             this.tab_activas.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_activas.Size = new System.Drawing.Size(769, 509);
+            this.tab_activas.Size = new System.Drawing.Size(752, 686);
             this.tab_activas.TabIndex = 0;
             this.tab_activas.Text = "Citas Activas";
             this.tab_activas.UseVisualStyleBackColor = true;
@@ -419,8 +420,10 @@ namespace Consultas
             this.dg_Todascitas.Location = new System.Drawing.Point(9, 102);
             this.dg_Todascitas.Name = "dg_Todascitas";
             this.dg_Todascitas.ReadOnly = true;
+            this.dg_Todascitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_Todascitas.Size = new System.Drawing.Size(737, 394);
             this.dg_Todascitas.TabIndex = 2;
+            this.dg_Todascitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Todascitas_CellContentClick);
             // 
             // tab_nueva
             // 
@@ -428,7 +431,7 @@ namespace Consultas
             this.tab_nueva.Controls.Add(this.tabla_nueva_cita);
             this.tab_nueva.Location = new System.Drawing.Point(4, 22);
             this.tab_nueva.Name = "tab_nueva";
-            this.tab_nueva.Size = new System.Drawing.Size(769, 509);
+            this.tab_nueva.Size = new System.Drawing.Size(752, 686);
             this.tab_nueva.TabIndex = 2;
             this.tab_nueva.Text = "Nueva Cita";
             this.tab_nueva.UseVisualStyleBackColor = true;

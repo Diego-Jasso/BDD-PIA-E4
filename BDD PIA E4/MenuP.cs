@@ -253,11 +253,6 @@ namespace BDD_PIA_E4
             Mostrarform(new menuEspecialidad());
         }
 
-        private void button19_Click(object sender, EventArgs e)
-        {
-            Mostrarform(new menuEspecialiad_servicio());
-        }
-
         private void button20_Click(object sender, EventArgs e)
         {
             Mostrarform(new menuServicios());

@@ -123,5 +123,10 @@ namespace BDD_PIA_E4
 
             dataGridView1.DataSource = llenar_Grid();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

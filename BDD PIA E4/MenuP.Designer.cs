@@ -41,7 +41,6 @@ namespace BDD_PIA_E4
             this.panelEmpleadosSub = new System.Windows.Forms.Panel();
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -110,7 +109,7 @@ namespace BDD_PIA_E4
             this.panelInventariosSub.Controls.Add(this.button4);
             this.panelInventariosSub.Controls.Add(this.button8);
             this.panelInventariosSub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInventariosSub.Location = new System.Drawing.Point(0, 695);
+            this.panelInventariosSub.Location = new System.Drawing.Point(0, 678);
             this.panelInventariosSub.Name = "panelInventariosSub";
             this.panelInventariosSub.Size = new System.Drawing.Size(233, 133);
             this.panelInventariosSub.TabIndex = 0;
@@ -221,7 +220,7 @@ namespace BDD_PIA_E4
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(0, 667);
+            this.btnInventario.Location = new System.Drawing.Point(0, 650);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(233, 28);
             this.btnInventario.TabIndex = 7;
@@ -234,14 +233,13 @@ namespace BDD_PIA_E4
             this.panelEmpleadosSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
             this.panelEmpleadosSub.Controls.Add(this.button21);
             this.panelEmpleadosSub.Controls.Add(this.button20);
-            this.panelEmpleadosSub.Controls.Add(this.button19);
             this.panelEmpleadosSub.Controls.Add(this.button7);
             this.panelEmpleadosSub.Controls.Add(this.button6);
             this.panelEmpleadosSub.Controls.Add(this.button5);
             this.panelEmpleadosSub.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEmpleadosSub.Location = new System.Drawing.Point(0, 515);
             this.panelEmpleadosSub.Name = "panelEmpleadosSub";
-            this.panelEmpleadosSub.Size = new System.Drawing.Size(233, 152);
+            this.panelEmpleadosSub.Size = new System.Drawing.Size(233, 135);
             this.panelEmpleadosSub.TabIndex = 1;
             // 
             // button21
@@ -255,7 +253,7 @@ namespace BDD_PIA_E4
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button21.Location = new System.Drawing.Point(0, 128);
+            this.button21.Location = new System.Drawing.Point(0, 105);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(233, 24);
             this.button21.TabIndex = 8;
@@ -274,32 +272,13 @@ namespace BDD_PIA_E4
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button20.Location = new System.Drawing.Point(0, 100);
+            this.button20.Location = new System.Drawing.Point(0, 77);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(233, 28);
             this.button20.TabIndex = 7;
             this.button20.Text = "Tipo Servicio";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
-            this.button19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(73)))));
-            this.button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(92)))), ((int)(((byte)(124)))));
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button19.Location = new System.Drawing.Point(0, 77);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(233, 23);
-            this.button19.TabIndex = 6;
-            this.button19.Text = "Especialidad Servicio";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button7
             // 
@@ -738,7 +717,7 @@ namespace BDD_PIA_E4
             this.Controls.Add(this.panelForms);
             this.Controls.Add(this.panelMenuLat);
             this.Name = "MenuP";
-            this.Text = "MenuP";
+            this.Text = "Consultorio Bit-Health";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuP_FormClosing);
             this.Load += new System.EventHandler(this.MenuP_Load);
             this.panelMenuLat.ResumeLayout(false);
@@ -785,7 +764,6 @@ namespace BDD_PIA_E4
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Panel panelCitasSub;

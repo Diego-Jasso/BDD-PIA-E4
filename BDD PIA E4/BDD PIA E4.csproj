@@ -77,12 +77,6 @@
     <Compile Include="menuServicios.Designer.cs">
       <DependentUpon>menuServicios.cs</DependentUpon>
     </Compile>
-    <Compile Include="menuEspecialiad_servicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="menuEspecialiad_servicio.Designer.cs">
-      <DependentUpon>menuEspecialiad_servicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="menuEspecialidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,9 +213,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menuServicios.resx">
       <DependentUpon>menuServicios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="menuEspecialiad_servicio.resx">
-      <DependentUpon>menuEspecialiad_servicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuEspecialidad.resx">
       <DependentUpon>menuEspecialidad.cs</DependentUpon>

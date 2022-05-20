@@ -279,7 +279,7 @@ namespace Consultas
 
             this.id_cita_modif = (long)rowModif.Cells["Cita_id"].Value;
             var contacto = rowModif.Cells["Contacto"].Value;
-            var llamada = rowModif.Cells["Teléfono Llamada"].Value;
+            var llamada = rowModif.Cells["Telefono"].Value;
             int servicio = (int)rowModif.Cells["Servicio_id"].Value;
             DateTime FechaPrgramada = (DateTime)rowModif.Cells["Fecha Programada"].Value;
             bool cancelado = (bool)rowModif.Cells["Cancelado"].Value;
@@ -409,6 +409,11 @@ namespace Consultas
         {
             this.fecha_programada.Value = DateTime.Now;
            
+        }
+
+        private void dg_Todascitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
