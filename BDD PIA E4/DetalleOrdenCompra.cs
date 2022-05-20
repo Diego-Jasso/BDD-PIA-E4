@@ -14,9 +14,11 @@ namespace FaltanteInventarios
 {
     public partial class DetalleOrdenCompra : Form
     {
-        public DetalleOrdenCompra()
+        long orden;
+        public DetalleOrdenCompra(long orden_id)
         {
             InitializeComponent();
+            this.orden = orden_id;
         }
 
         private void DetalleOrdenCompra_Load(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace FaltanteInventarios
         {
             Conexion.Conectar();
             DataTable dt = new DataTable();
-            string consulta = "select * from OrdenCompra_Conceptos";
+            string consulta = $"SELECT ocs.Orden_id, ocs.Insumo_id,cs.Descripcion ,ocs.Cantidad, ocs.Costo, ocs.IVA FROM OrdenCompra_Conceptos ocs INNER JOIN Catalogo_Insumos cs ON ocs.Insumo_id = cs.Insumo_id  WHERE orden_id = {this.orden}";
             SqlCommand cmd = new SqlCommand(consulta, Conexion.Conectar());
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -39,11 +41,11 @@ namespace FaltanteInventarios
 
         private void dataGridViewOrdenDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtOrdenID.Text = dataGridViewOrdenDetalle.CurrentRow.Cells[0].Value.ToString();
-            txtInsumo.Text = dataGridViewOrdenDetalle.CurrentRow.Cells[1].Value.ToString();
-            txtCantidad.Text = dataGridViewOrdenDetalle.CurrentRow.Cells[2].Value.ToString();
-            txtCosto.Text = dataGridViewOrdenDetalle.CurrentRow.Cells[3].Value.ToString();
-            txtIva.Text = dataGridViewOrdenDetalle.CurrentRow.Cells[4].Value.ToString();
+            txtOrdenID.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Orden_id"].Value.ToString();
+            txtInsumo.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Insumo_id"].Value.ToString();
+            txtCantidad.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Cantidad"].Value.ToString();
+            txtCosto.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["Costo"].Value.ToString();
+            txtIva.Text = dataGridViewOrdenDetalle.CurrentRow.Cells["IVA"].Value.ToString();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
