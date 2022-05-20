@@ -50,7 +50,6 @@ namespace BDD_PIA_E4
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.panelPacientesSub = new System.Windows.Forms.Panel();
@@ -111,7 +110,7 @@ namespace BDD_PIA_E4
             this.panelInventariosSub.Controls.Add(this.button4);
             this.panelInventariosSub.Controls.Add(this.button8);
             this.panelInventariosSub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInventariosSub.Location = new System.Drawing.Point(0, 753);
+            this.panelInventariosSub.Location = new System.Drawing.Point(0, 695);
             this.panelInventariosSub.Name = "panelInventariosSub";
             this.panelInventariosSub.Size = new System.Drawing.Size(233, 157);
             this.panelInventariosSub.TabIndex = 0;
@@ -222,7 +221,7 @@ namespace BDD_PIA_E4
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(0, 725);
+            this.btnInventario.Location = new System.Drawing.Point(0, 667);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(233, 28);
             this.btnInventario.TabIndex = 7;
@@ -240,7 +239,7 @@ namespace BDD_PIA_E4
             this.panelEmpleadosSub.Controls.Add(this.button6);
             this.panelEmpleadosSub.Controls.Add(this.button5);
             this.panelEmpleadosSub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEmpleadosSub.Location = new System.Drawing.Point(0, 573);
+            this.panelEmpleadosSub.Location = new System.Drawing.Point(0, 515);
             this.panelEmpleadosSub.Name = "panelEmpleadosSub";
             this.panelEmpleadosSub.Size = new System.Drawing.Size(233, 152);
             this.panelEmpleadosSub.TabIndex = 1;
@@ -370,7 +369,7 @@ namespace BDD_PIA_E4
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 539);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 481);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(233, 34);
             this.btnEmpleados.TabIndex = 6;
@@ -384,12 +383,11 @@ namespace BDD_PIA_E4
             this.panelReporteSub.Controls.Add(this.button18);
             this.panelReporteSub.Controls.Add(this.button17);
             this.panelReporteSub.Controls.Add(this.button3);
-            this.panelReporteSub.Controls.Add(this.button2);
             this.panelReporteSub.Controls.Add(this.button1);
             this.panelReporteSub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReporteSub.Location = new System.Drawing.Point(0, 407);
+            this.panelReporteSub.Location = new System.Drawing.Point(0, 379);
             this.panelReporteSub.Name = "panelReporteSub";
-            this.panelReporteSub.Size = new System.Drawing.Size(233, 132);
+            this.panelReporteSub.Size = new System.Drawing.Size(233, 102);
             this.panelReporteSub.TabIndex = 1;
             // 
             // button18
@@ -403,7 +401,7 @@ namespace BDD_PIA_E4
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button18.Location = new System.Drawing.Point(0, 100);
+            this.button18.Location = new System.Drawing.Point(0, 73);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(233, 23);
             this.button18.TabIndex = 6;
@@ -422,7 +420,7 @@ namespace BDD_PIA_E4
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button17.Location = new System.Drawing.Point(0, 77);
+            this.button17.Location = new System.Drawing.Point(0, 50);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(233, 23);
             this.button17.TabIndex = 5;
@@ -441,31 +439,13 @@ namespace BDD_PIA_E4
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Location = new System.Drawing.Point(0, 54);
+            this.button3.Location = new System.Drawing.Point(0, 27);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(233, 23);
             this.button3.TabIndex = 4;
             this.button3.Text = "Observaciones";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(176)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(73)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(92)))), ((int)(((byte)(124)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(0, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(233, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Resultados prueba de orina";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -497,7 +477,7 @@ namespace BDD_PIA_E4
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.White;
-            this.btnReporte.Location = new System.Drawing.Point(0, 373);
+            this.btnReporte.Location = new System.Drawing.Point(0, 345);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(233, 34);
             this.btnReporte.TabIndex = 5;
@@ -513,7 +493,7 @@ namespace BDD_PIA_E4
             this.panelPacientesSub.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPacientesSub.Location = new System.Drawing.Point(0, 282);
             this.panelPacientesSub.Name = "panelPacientesSub";
-            this.panelPacientesSub.Size = new System.Drawing.Size(233, 91);
+            this.panelPacientesSub.Size = new System.Drawing.Size(233, 63);
             this.panelPacientesSub.TabIndex = 0;
             // 
             // btnEliminarP
@@ -788,7 +768,6 @@ namespace BDD_PIA_E4
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Panel panelReporteSub;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Panel panelPacientesSub;

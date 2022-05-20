@@ -38,7 +38,7 @@ namespace BDD_PIA_E4
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string insertar = "Insert into Inventario(Inusmo_id, Cantidad, Orden_id, Caducidad) values(@Inusmo_id, @Cantidad, @Orden_id, @Caducidad)";
+            string insertar = "Insert into Inventario(Insumo_id, Cantidad, Orden_id, Caducidad) values(@Inusmo_id, @Cantidad, @Orden_id, @Caducidad)";
             SqlCommand cmdl = new SqlCommand(insertar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@Inusmo_id", txtInsumoID.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCant.Text);
@@ -59,7 +59,7 @@ namespace BDD_PIA_E4
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Conexion.Conectar();
-            string actualizar = "UPDATE Inventario SET Inusmo_id = @Inusmo_id, Cantidad = @Cantidad, Orden_id = @Orden_id, Caducidad = @Caducidad WHERE Lote_id = @LoteID";
+            string actualizar = "UPDATE Inventario SET Insumo_id = @Inusmo_id, Cantidad = @Cantidad, Orden_id = @Orden_id, Caducidad = @Caducidad WHERE Lote_id = @LoteID";
             SqlCommand cmdl = new SqlCommand(actualizar, Conexion.Conectar());
             cmdl.Parameters.AddWithValue("@LoteID", txtLoteID.Text);
             cmdl.Parameters.AddWithValue("@Inusmo_id", txtInsumoID.Text);

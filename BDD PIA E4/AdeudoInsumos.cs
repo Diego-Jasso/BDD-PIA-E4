@@ -52,14 +52,31 @@ namespace FaltanteInventarios
             cmdl.Parameters.AddWithValue("@Adeudo_id", txtAdeudo.Text);
             cmdl.Parameters.AddWithValue("@Lote_id", txtLote.Text);
             cmdl.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
-            try
+            string obtenerInv = "Select Cantidad FROM Inventario WHERE Lote_id = @LoteID";
+
+            SqlCommand cmoi = new SqlCommand(obtenerInv, Conexion.Conectar());
+            cmoi.Parameters.AddWithValue("@LoteID", txtLote.Text);
+            double total = (double)cmoi.ExecuteScalar();
+            int reducir = Convert.ToInt32(txtCantidad.Text);
+            if (total < reducir)
             {
+                MessageBox.Show("Error: No hay cantidad necesaria en el inventario para completar la operacion");
+            }
+            else
+            {
+                try { 
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron agregados exitosamente");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                string actualizar = "EXEC ActualizarInventario @Lote_id, @Adeudo_id";
+                SqlCommand actualizarInv = new SqlCommand(actualizar, Conexion.Conectar());
+                actualizarInv.Parameters.AddWithValue("@Adeudo_id", txtAdeudo.Text);
+                actualizarInv.Parameters.AddWithValue("@Lote_id", txtLote.Text);
+                actualizarInv.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             dataGridViewAdIns.DataSource = llenar_Grid();
         }

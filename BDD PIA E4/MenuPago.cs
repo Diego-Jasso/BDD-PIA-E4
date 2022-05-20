@@ -65,16 +65,31 @@ namespace CshaepBDD
             cmdl.Parameters.AddWithValue("@Numero", textBox4.Text);
             cmdl.Parameters.AddWithValue("@Adeudo_id", textBox5.Text);
 
-            try
+            string ObtenerAdeudo = "Select Precio FROM Adeudos WHERE Adeudo_id = @AdeudoID";
+            SqlCommand cmoi = new SqlCommand(ObtenerAdeudo, Conexion.Conectar());
+            cmoi.Parameters.AddWithValue("@AdeudoID", textBox5.Text);
+            decimal total = (decimal)cmoi.ExecuteScalar();
+            if (total == 0)
             {
+                MessageBox.Show("Error: El adeudo ya fue pagado");
+            }
+            else
+            {
+                try
+                { 
                 cmdl.ExecuteNonQuery();
                 MessageBox.Show("Los datos fueron agregados exitosamente");
+                string actualizar = "EXEC PagarAdeudo @PagoID, @AdeudoID";
+                SqlCommand actualizarAdeudo = new SqlCommand(actualizar, Conexion.Conectar());
+                actualizarAdeudo.Parameters.AddWithValue("@PagoID", textBox1.Text);
+                actualizarAdeudo.Parameters.AddWithValue("@AdeudoID", textBox5.Text);
+                actualizarAdeudo.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
 
             dataGridView1.DataSource = llenar_Grid();
         }
